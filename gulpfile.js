@@ -95,11 +95,11 @@ function watchFiles() {
 }
 
 // define complex tasks
-const build = gulp.parallel(js, css); //cssLibs, jsLibs,
-const watch = gulp.parallel(js, css, watchFiles, nodemonStart, browserSync); //cssLibs, jsLibs,
+const build = gulp.parallel(js); //cssLibs, jsLibs, css
+const watch = gulp.parallel(js, watchFiles, nodemonStart, browserSync); //cssLibs, jsLibs, css
 
 // export tasks
-exports.css = css;
+// exports.css = css;
 // exports.cssLibs = cssLibs;
 // exports.jsLibs = jsLibs;
 exports.js = js;
