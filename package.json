@@ -1,0 +1,39 @@
+{
+  "name": "snakegame_vanilla-js_canvas",
+  "version": "1.0.0",
+  "description": "'Snake', this's game will be created using 'vanilla' Javascript and Canvas.",
+  "main": "js/src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NikitaPetrovskiy/SnakeGame_Vanilla-Js_Canvas.git"
+  },
+  "keywords": [
+    "Snake",
+    "javascript",
+    "js",
+    "canvas"
+  ],
+  "author": "Nick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NikitaPetrovskiy/SnakeGame_Vanilla-Js_Canvas/issues"
+  },
+  "homepage": "https://github.com/NikitaPetrovskiy/SnakeGame_Vanilla-Js_Canvas#readme",
+  "dependencies": {
+    "browser-sync": "^2.26.7",
+    "cssnano": "^4.1.10",
+    "express": "^4.17.1",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-install": "^1.1.0",
+    "gulp-nodemon": "^2.4.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-uglifyjs": "^0.6.2",
+    "path": "^0.12.7"
+  }
+}
