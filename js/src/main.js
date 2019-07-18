@@ -25,6 +25,25 @@ snake[0] = {
   y: 10 * box
 };
 
+//обработчик событий на нажание клавиш
+document.addEventListener('keydown', getDirection);
+
+//переменная, состояния движения змейки
+let dir;
+//функция для обработки нажатия клавиш
+function getDirection(e) {
+    if (e.keyCode == 37  && dir != 'right') {
+        dir = 'left';
+    } else if (e.keyCode == 38 && dir != 'down') {
+        dir = 'up';
+    } else if (e.keyCode == 39 && dir != 'left') {
+        dir = 'right';
+    }else if (e.keyCode == 40 && dir != 'up') {
+        dir = 'down';
+    }
+};
+
+
 // функция, которая рисует объекты внутри canvas
 function drawGame() {
     //функция canvasб которая позволяет рисовать картинки
@@ -36,6 +55,30 @@ function drawGame() {
         ctx.fillStyle = 'green'; //голова будет квадратиком зелёного цвета
         ctx.fillRect(item.x, item.y, box, box) // координаты по оси x, y, а так же размер поля по вертикали и горизонтали
     });
+
+    //отображаю надпись
+    ctx.fillStyle = 'white';
+    ctx.font = '50px Arial';
+    ctx.fillText(score, box * 2.5, box * 1.7);
+
+    //переменные, где при старте находилась змейка
+    let snakeX = snake[0].x;
+    let snakeY = snake[0].y;
+
+    snake.pop();
+    if (dir == 'left') snakeX -= box; //отнимаю одну ячейку
+    if (dir == 'right') snakeX += box;
+    if (dir == 'up') snakeY -= box;
+    if (dir == 'down') snakeY += box;
+
+    //координаты для новой позиции
+    let newHead = {
+        x: snakeX,
+        y: snakeY
+    }
+
+    //первым элементов добавляю новые значенияж
+    snake.unshift(newHead);
 };
 
 // помещаем функция для отрисовки, котораядолжна выполняться каждые 100 млсек.
